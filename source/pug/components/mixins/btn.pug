@@ -7,3 +7,4 @@ mixin btn(options = {})
   - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
 
   #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)!= text
+    block
