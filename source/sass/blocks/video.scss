@@ -66,14 +66,13 @@
     transform: translate(-50%, -50%);
 
     @media (min-width: $vp640) {
-      left: 44%;
+      left: 49%;
       width: 69px;
       height: 46px;
     }
 
     @media (min-width: $vp960) {
-      left: 47%;
-      top: 47%;
+      top: 50%;
       width: 52px;
       height: 35px;
     }
@@ -81,7 +80,6 @@
     @media (min-width: $vp1280) {
       width: 69px;
       height: 46px;
-      left: 46%;
     }
   }
 }
@@ -90,7 +88,7 @@
   cursor: pointer;
 
   @include hover-focus {
-    .video__button {
+    .video__button-icon {
       opacity: 1;
       filter: invert(12%) sepia(88%) saturate(6466%) hue-rotate(352deg) brightness(96%) contrast(112%);
     }
