@@ -1,0 +1,23 @@
+mixin experience()
+  section.experience
+    .container
+      .experience__description
+        h2.visually-hidden 167 лет нашего опыта
+        .experience__icon
+          +icon("167", 71, 14).experience__icon-img
+          +icon("years", 90, 6).experience__icon-text
+        p.experience__description-text DuffBeer — один из мировых лидеров по производству дрожжей и других продуктов ферментации. И нам нужна сильная команда профессионалов и единомышленников, которые будут стремиться развиваться вместе с DuffBeer.
+        p.experience__description-text Мы всегда рады принять талантливых и целеустремленных людей в нашу дружную команду! Мы ценим каждого своего сотрудника и стремимся предоставить всем равные возможности&nbsp;в&nbsp;развитии <br>и&nbsp;совершенств.
+      .experience__video-wrapper
+        .video
+          picture
+            source(type="image/webp", media="(min-width: 1280px)", srcset="img/content/exp-l.webp 1x, img/content/exp-l@2x.webp 2x", width="545", height="364")
+            source(type="image/webp", media="(min-width: 960px)", srcset="img/content/exp-m.webp 1x, img/content/exp-m.webp 2x", width="405", height="271")
+            source(type="image/webp", media="(min-width: 640px)", srcset="img/content/exp-s.webp 1x, img/content/exp-s@2x.webp 2x", width="540", height="361")
+            source(type="image/webp", srcset="img/content/exp-xs.webp 1x, img/content/exp-xs@2x.webp 2x", width="260", height="174")
+            source(type="image/webp", media="(min-width: 1280px)", srcset="img/content/exp-l.jpg 1x, img/content/exp-l@2x.jpg 2x", width="545", height="364")
+            source(type="image/webp", media="(min-width: 960px)", srcset="img/content/exp-m.jpg 1x, img/content/exp-m@2x.jpg 2x", width="405", height="271")
+            source(type="image/webp", media="(min-width: 640px)", srcset="img/content/exp-s.jpg 1x, img/content/exp-s@2x.jpg 2x", width="540", height="361")
+            img.video__media(src="https://www.youtube.com/watch?v=iuJDhFRDx9M", srcset="img/content/exp-xs@2x.jpg 2x",width="260", height="174", alt="Видео загруженное с интернета.", loading="lazy")
+          +btn(aria-label="Запуск видео.", class= "video__button")
+            +icon("play", 32, 21).video__button-icon

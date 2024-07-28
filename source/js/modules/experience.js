@@ -1,27 +1,55 @@
-const video = document.querySelector('.experience__video');
-const img = video.querySelector('.experience__img');
-let iframe;
+(function () {
+  const YT_REGEXP = /[?&]v=([^&#]+)/;
+  const VM_REGEXP = /vimeo.com\/(\d+)/;
 
-const createIframe = () => {
-  iframe = document.createElement('iframe');
-  iframe.style.width = '100%';
-  iframe.style.height = `${img.offsetHeight}px`;
-  iframe.setAttribute('loading', 'lazy');
-  iframe.setAttribute('allowfullscreen', '');
-  iframe.setAttribute('frameborder', '0');
-  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-  iframe.setAttribute('src', `${video.dataset.href}?autoplay=1`);
-  return iframe;
-};
+  const parseMediaURL = (media) => media.src;
+  const generateURL = (url) => {
+    if (url.includes('youtube.com') || url.includes('youtu.be')) {
+      const videoId = url.match(YT_REGEXP)[1];
+      return `https://www.youtube.com/embed/${videoId}?rel=0&showinfo=0&autoplay=1`;
+    } else if (url.includes('vimeo.com')) {
+      const videoId = url.match(VM_REGEXP)[1];
+      return `https://player.vimeo.com/video/${videoId}?autoplay=1`;
+    } else {
+      return url;
+    }
+  };
+  const createIframe = (url) => {
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('allow', 'autoplay');
+    iframe.setAttribute('src', url);
+    iframe.classList.add('video__media');
+    return iframe;
+  };
 
-const replacePicture = () => {
-  createIframe();
-  video.innerHTML = '';
-  video.appendChild(iframe);
-  // video.classList.remove('experience__video--size');
-};
+  const setupVideo = (video) => {
+    const media = video.querySelector('.video__media');
+    const button = video.querySelector('.video__button');
+    const buttonIsDisabled = button.classList.contains('video__button--disabled');
 
-video.addEventListener('click', (evt) => {
-  evt.preventDefault();
-  replacePicture();
-});
+    if (buttonIsDisabled) {
+      return;
+    }
+
+    const url = parseMediaURL(media);
+    const embedUrl = generateURL(url);
+
+    video.addEventListener('click', () => {
+      const iframe = createIframe(embedUrl);
+      video.appendChild(iframe);
+
+      button.remove();
+    });
+
+    video.classList.add('video--enabled');
+  };
+
+  const setupVideos = () => {
+    document
+        .querySelectorAll('.video')
+        .forEach(setupVideo);
+  };
+
+  setupVideos();
+})();
