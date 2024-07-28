@@ -1,6 +1,2 @@
 mixin img(path, image, format, width, height, altText, useRetina = false)
-  img(src="img/" + path + "/" + image + "." + format,
-      srcset= useRetina ? "img/" + path + "/" + image + "@2x." + format + " 2x" : null,
-      width= width,
-      height= height,
-      alt= altText)
+  img(src="img/" + path + "/" + image + "." + format, srcset= useRetina ? "img/" + path + "/" + image + "@2x." + format + "2x" : null, width= width, height= height, alt= altText)

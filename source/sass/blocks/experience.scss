@@ -1,0 +1,155 @@
+.experience {
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 60px;
+
+    gap: 8px;
+
+    @media (min-width: $vp640) {
+      padding-bottom: 81px;
+
+      gap: 10px;
+    }
+
+    @media (min-width: $vp960) {
+      flex-direction: row-reverse;
+
+      padding: 71px 15px 58px 0;
+
+      gap: 66px;
+    }
+
+    @media (min-width: $vp1280) {
+      padding: 92px 25px 100px;
+
+      border-right: 3px solid $color-linen;
+
+      gap: 74px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+
+    padding: 50px 15px 20px 14px;
+
+    gap: 10px;
+
+    @media (min-width: $vp640) {
+      padding: 59px 20px 20px;
+    }
+
+    @media (min-width: $vp960) {
+      padding: 0;
+      padding-right: 10px;
+
+      gap: 16px;
+    }
+
+    @media (min-width: $vp1280) {
+      padding: 0 33px 0 0;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 18px;
+
+    gap: 16px;
+
+    @media (min-width: $vp640) {
+      padding-bottom: 10px;
+
+      gap: 13px;
+    }
+
+    @media (min-width: $vp960) {
+      width: 190px;
+      height: 131px;
+      padding: 0;
+
+      gap: 13px;
+
+      padding-left: 1px;
+    }
+
+    @media (min-width: $vp1280) {
+      gap: 12px;
+    }
+  }
+
+  &__icon-img {
+    width: 71px;
+    height: 32px;
+
+    @media (min-width: $vp960) {
+      width: 149px;
+      height: 84px;
+      padding-left: 1px;
+    }
+  }
+
+  &__icon-text {
+    @media (min-width: $vp960) {
+      width: 187px;
+      height: 27px;
+    }
+  }
+
+  &__description-text {
+    font-size: 14px;
+    font-weight: $regular;
+    line-height: 20px;
+
+    margin: 0;
+
+    color: $color-soya-bean;
+
+    @media (min-width: $vp640) {
+      padding-left: 1px;
+    }
+
+    @media (min-width: $vp960) {
+      font-size: 18px;
+      line-height: 30px;
+
+      &:first-of-type {
+        padding-top: 10px;
+      }
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__video-wrapper {
+    width: 250px;
+    height: 184px;
+
+    background-color: $color-linen;
+
+    @media (min-width: $vp640) {
+      width: 520px;
+      height: 382px;
+      margin-left: 20px;
+    }
+
+    @media (min-width: $vp960) {
+      width: 405px;
+      height: 272px;
+      margin: 42px 0 0;
+    }
+
+    @media (min-width: $vp1280) {
+      width: 545px;
+      height: 367px;
+      margin: 8px 0 0;
+    }
+  }
+}
