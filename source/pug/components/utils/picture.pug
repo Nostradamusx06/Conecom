@@ -1,4 +1,14 @@
-mixin picture(path, image, format, width, height, altText)
+mixin picture(path, image, format, widthMob, heightMob, widthDesk, heightDesk, altText)
   picture(class!=attributes.class)
-    source(type="image/webp", srcset="img/" + path + "/" + image + ".webp" + ", " + "img/" + path + "/" + image + "@2x.webp" + " 2x")
-    img(src="img/" + path + "/" + image + "." + format, srcset= "img/" + path + "/" + image + "@2x." + format + " 2x", width= width, height= height, alt= altText)
+    source(type="image/webp", media="(min-width: 1280px)",
+      srcset=`img/${path}/${image}-l.webp, img/${path}/${image}-l@2x.webp 2x`,
+      width=widthDesk, height=heightDesk)
+    source(type="image/webp",
+      srcset=`img/${path}/${image}-xs.webp, img/${path}/${image}-xs@2x.webp 2x`,
+      width=widthMob, height=heightMob)
+    source(type=`image/${format}`, media="(min-width: 1280px)",
+      srcset=`img/${path}/${image}-l.${format}, img/${path}/${image}-l@2x.${format} 2x`,
+      width=widthDesk, height=heightDesk)
+    img(src=`img/${path}/${image}-xs.${format}`,
+      srcset=`img/${path}/${image}-xs@2x.${format} 2x`,
+      width=widthMob, height=heightMob, alt=altText, loading="lazy")&attributes(attributes)

@@ -10,7 +10,7 @@
  * Released on: May 13, 2024
  */
 
-import { S as Swiper } from './shared/swiper-core.mjs';
+import {S as Swiper} from './shared/swiper-core.mjs';
 import Virtual from './modules/virtual.mjs';
 import Keyboard from './modules/keyboard.mjs';
 import Mousewheel from './modules/mousewheel.mjs';
@@ -39,4 +39,4 @@ import EffectCards from './modules/effect-cards.mjs';
 const modules = [Virtual, Keyboard, Mousewheel, Navigation, Pagination, Scrollbar, Parallax, Zoom, Controller, A11y, History, HashNavigation, Autoplay, Thumb, freeMode, Grid, Manipulation, EffectFade, EffectCube, EffectFlip, EffectCoverflow, EffectCreative, EffectCards];
 Swiper.use(modules);
 
-export { Swiper, Swiper as default };
+export {Swiper, Swiper as default};
