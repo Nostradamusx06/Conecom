@@ -1,0 +1,354 @@
+.advantages {
+  overflow-x: hidden;
+
+  .container {
+    display: grid;
+    grid-template-columns: 15px calc(100vw - 60px) 15px;
+
+    padding: 50px 0 20px;
+    background-color: $color-linen;
+    overflow-x: hidden;
+
+    @media (min-width: $vp640) {
+      grid-template-columns: 20px calc(100vw - 70px) 20px;
+      padding: 60px 0 20px;
+    }
+
+    @media (min-width: $vp960) {
+      grid-template-columns: 40px calc(100vw - 110px) 40px;
+      padding: 80px 0 20px;
+    }
+
+    @media (min-width: $vp1280) {
+      grid-template-columns: 60px 1fr 60px;
+      padding: 100px 0 20px;
+    }
+  }
+
+  &__slide {
+    position: relative;
+
+    overflow: hidden;
+    flex-shrink: 0;
+
+    width: 260px;
+    height: 284px;
+
+    background-color: $color-smalt;
+
+    @media(min-width: $vp960) {
+      height: 343px;
+
+      &:nth-of-type(7) {
+        .advantages__subheading {
+          padding-left: 23px;
+        }
+      }
+    }
+
+    @media(min-width: $vp1280) {
+      width: 356px;
+      height: 317px;
+      &:nth-of-type(7) {
+        .advantages__subheading {
+          padding-left: 20px;
+        }
+      }
+      &:nth-of-type(3) {
+        .advantages__subheading {
+          padding-right: 90px;
+        }
+      }
+    }
+
+    &.is-active {
+      overflow: initial;
+    }
+  }
+
+  &__heading {
+    font-size: 20px;
+    font-weight: $regular;
+    line-height: 32px;
+
+    width: fit-content;
+    margin: 0;
+    padding-bottom: 20px;
+
+    color: $color-smalt;
+
+    grid-area: 1/2/2/3;
+
+    @media(min-width: $vp960) {
+      font-size: 40px;
+      line-height: 60px;
+
+      padding-bottom: 32px;
+    }
+
+    @media(min-width: $vp1280) {
+      padding-bottom: 60px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+
+    margin: 0;
+    padding-bottom: 16px;
+
+    grid-area: 2/2/3/3;
+
+    @media(min-width: $vp960) {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20.5px 35px;
+    }
+
+    @media(min-width: $vp1280) {
+      gap: 32px 31px;
+    }
+  }
+
+  &__subwrapper {
+    position: absolute;
+    top: 284px;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px 32px;
+    transition: all $trans-default;
+  }
+
+  &__slide.is-active .advantages__subwrapper {
+    overflow: auto;
+    opacity: 1;
+    left: 0;
+    top: 0;
+  }
+
+  &__picture {
+    visibility: hidden;
+    overflow: hidden;
+
+    max-height: 0;
+
+    transition: opacity $trans-default;
+
+    opacity: 0;
+  }
+
+  &__picture.is-active {
+    visibility: visible;
+    overflow: initial;
+
+    max-height: 100vh;
+
+    opacity: 1;
+  }
+
+  &__subheading {
+    font-size: 14px;
+    font-weight: $regular;
+    line-height: 22px;
+
+    visibility: hidden;
+    overflow: hidden;
+    padding: 21px 19px;
+    max-height: 0;
+    margin: 0;
+
+    transition: opacity $trans-default;
+
+    opacity: 0;
+    color: $color-default-white;
+
+    @media(min-width: $vp960) {
+      font-size: 18px;
+      padding: 20px;
+    }
+  }
+
+  &__subheading.is-active {
+    visibility: visible;
+    overflow: initial;
+
+    max-height: 100vh;
+
+    opacity: 1;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: $regular;
+    line-height: 22px;
+
+    margin: 0;
+    overflow: auto;
+    transition: opacity $trans-default;
+
+    color: $color-default-white;
+
+    @media(min-width: $vp960) {
+      font-size: 18px;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    right: 13px;
+    bottom: 19px;
+
+    width: 29px;
+    height: 29px;
+    padding: 0;
+    z-index: 1;
+    transition: all $trans-default;
+
+    @media(min-width: $vp960) {
+      bottom: 23px;
+    }
+
+    @media(min-width: $vp1280) {
+      bottom: 25px;
+    }
+
+    &::before,
+    &::after {
+      position: relative;
+
+      display: block;
+
+      width: 15px;
+      height: 1px;
+
+      content: "";
+      transition: transform $trans-default;
+
+      background-color: $color-default-white;
+    }
+
+    &::before {
+      top: 14px;
+      left: 7px;
+    }
+
+    &::after {
+      top: 14px;
+      left: -8px;
+
+      transform: rotate(90deg);
+    }
+  }
+
+  &__toggle.is-active {
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+
+  &__button {
+    z-index: 1;
+
+    display: block;
+
+    width: 15px;
+    height: auto;
+    padding: 0;
+
+    content: "";
+
+    background-color: $color-linen;
+
+    @media(min-width: $vp640) {
+      width: 20px;
+    }
+
+    @media(min-width: $vp960) {
+      display: none;
+    }
+
+    &::before {
+      position: relative;
+
+      display: block;
+
+      width: 14px;
+      height: 14px;
+      margin: 37px 0 0;
+
+      content: "";
+
+      background-image: url("../../img/sprite/swiper-arrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__button--prev {
+    grid-area: 1/1/3/2;
+  }
+
+  &__button--next {
+    grid-area: 1/3/3/4;
+
+    &::before {
+      transform: rotate(180deg);
+
+      @media(min-width: $vp640) {
+        margin: 36px 0 0 3px;
+      }
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    overflow: hidden;
+
+    width: 64px;
+    margin: 0 auto;
+
+    grid-area: 3/2/4/3;
+    gap: 8px;
+
+    @media(min-width: $vp960) {
+      display: none;
+    }
+  }
+
+  &__bullet {
+    display: none;
+    display: inline-flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    width: 4px;
+    height: 4px;
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+    background-color: $color-stonewall-33;
+
+    &--active {
+      background-color: $color-smalt;
+    }
+
+    &:disabled {
+      pointer-events: none;
+
+      opacity: 0.5;
+    }
+
+    @include hover-focus {
+      opacity: 0.8;
+    }
+  }
+
+}
