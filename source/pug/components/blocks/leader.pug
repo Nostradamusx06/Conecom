@@ -1,0 +1,100 @@
+mixin leader()
+  -
+    const leaderData = [
+      {
+        subtitle: "10 700+ сотрудников",
+        picture: true,
+        path: "content",
+        name: "leader1",
+        format: "jpg",
+        width_mob: "260",
+        height_mob: "240",
+        width_tab: "454",
+        height_tab: "240",
+        width_desk: "565",
+        height_desk: "240",
+        alt: "Сотрудники обсуждают стратегию за столом.",
+      },
+      {
+        subtitle: "570 экспертов R&D",
+        picture: true,
+        path: "content",
+        name: "leader2",
+        format: "jpg",
+        width_mob: "260",
+        height_mob: "240",
+        width_tab: "294",
+        height_tab: "240",
+        width_desk: "294",
+        height_desk: "240",
+        alt: "Девушка проводит химический опыт.",
+        short : true,
+      },
+      {
+        subtitle: "лет опыта на\u00A0рынке\u00A0хлебопечения",
+        svg: "leader-167",
+        width_svg: "162",
+        height_svg: "73",
+        short : true,
+      },
+      {
+        subtitle: "25+ лет в Росcии",
+        picture: true,
+        path: "content",
+        name: "leader4",
+        format: "jpg",
+        width_mob: "260",
+        height_mob: "240",
+        width_tab: "454",
+        height_tab: "240",
+        width_desk: "565",
+        height_desk: "240",
+        alt: "Поле пшеницы на закате.",
+      },
+      {
+        subtitle: "Филиалы в 50 странах",
+        picture: true,
+        path: "content",
+        name: "leader5",
+        format: "jpg",
+        width_mob: "260",
+        height_mob: "240",
+        width_tab: "454",
+        height_tab: "240",
+        width_desk: "565",
+        height_desk: "240",
+        alt: "Завод возле чистой реки.",
+      },
+      {
+        subtitle: "направления деятельности",
+        svg: "leader-4",
+        width_svg: "59",
+        height_svg: "77",
+        short : true,
+      },
+    ]
+
+  section.leader
+    .container.swiper
+      h2.leader__heading DuffBeer
+      p.leader__text Ключевой мировой игрок в&nbsp;области ферментации
+      .leader__wrapper.swiper-wrapper
+        each leader in leaderData
+          if (leader.short)
+            .leader__slide.leader__slide--short.swiper-slide
+              if (leader.picture)
+                .leader__picture
+                  +picture-full(leader.path, leader.name, leader.format, leader.width_mob, leader.height_mob, leader.width_tab, leader.height_tab, leader.width_desk, leader.height_desk, leader.alt)
+                h3.leader__subtitle= `${leader.subtitle}`
+              else
+                +icon(leader.svg, leader.width_svg, leader.height_svg)(aria-label= `${leader.svg}`, class= "leader__svg")
+                h3.leader__subtitle= `${leader.subtitle}`
+          else
+            .leader__slide.swiper-slide
+              if (leader.picture)
+                .leader__picture
+                  +picture-full(leader.path, leader.name, leader.format, leader.width_mob, leader.height_mob, leader.width_tab, leader.height_tab, leader.width_desk, leader.height_desk, leader.alt)
+                h3.leader__subtitle= `${leader.subtitle}`
+      +btn(aria-label="Предыдущий слайд", class="leader__button leader__button--prev")
+      +btn(aria-label="Следующий слайд", class="leader__button leader__button--next")
+      .leader__pagination

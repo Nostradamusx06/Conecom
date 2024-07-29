@@ -2,14 +2,8 @@ import Swiper from 'swiper';
 import {Navigation, Pagination} from 'swiper/modules';
 
 (function () {
-  const advantagesSection = document.querySelector('.advantages');
-  const advantageSlides = advantagesSection.querySelectorAll('.advantages__slide');
-  const sliderContainer = advantagesSection.querySelector('.advantages__wrapper');
-
-  const toggleButtons = advantagesSection.querySelectorAll('.advantages__toggle');
-  const advantageImages = advantagesSection.querySelectorAll('.advantages__picture');
-  const advantageHeadings = advantagesSection.querySelectorAll('.advantages__subheading');
-  const advantageTexts = advantagesSection.querySelectorAll('.advantages__text');
+  const leaderSection = document.querySelector('.leader');
+  const sliderContainer = leaderSection.querySelector('.leader__wrapper');
 
   const BULLET_ACTIVE_THRESHOLD = 5;
   const PAGINATION_ELEMENT_WIDTH = '64px';
@@ -45,21 +39,7 @@ import {Navigation, Pagination} from 'swiper/modules';
 
   calculateSwiperWidth();
 
-  const toggleContentVisibility = (index) => {
-    toggleButtons[index].classList.toggle('is-active');
-    advantageHeadings[index].classList.toggle('is-active');
-    advantageImages[index].classList.toggle('is-active');
-    advantageTexts[index].classList.toggle('is-active');
-    advantageSlides[index].classList.toggle('is-active');
-  };
-
-  const initializeToggleButtons = () => {
-    toggleButtons.forEach((button, index) => {
-      button.addEventListener('click', () => toggleContentVisibility(index));
-    });
-  };
-
-  const swiperInstance = new Swiper('.advantages .container', {
+  const swiperInstance = new Swiper('.leader .container', {
     init: false,
     watchSlidesProgress: true,
     observer: true,
@@ -68,13 +48,13 @@ import {Navigation, Pagination} from 'swiper/modules';
     updateOnWindowResize: true,
     modules: [Navigation, Pagination],
     navigation: {
-      prevEl: '.advantages__button--prev',
-      nextEl: '.advantages__button--next',
+      prevEl: '.leader__button--prev',
+      nextEl: '.leader__button--next',
     },
     pagination: {
-      el: '.advantages__pagination',
-      bulletActiveClass: 'advantages__bullet--active',
-      bulletClass: 'advantages__bullet',
+      el: '.leader__pagination',
+      bulletActiveClass: 'leader__bullet--active',
+      bulletClass: 'leader__bullet',
       type: 'bullets',
       bulletElement: 'div',
       clickable: true,
@@ -128,24 +108,24 @@ import {Navigation, Pagination} from 'swiper/modules';
   });
 
   const updatePagination = () => {
-    const paginationElement = advantagesSection.querySelector('.advantages__pagination');
-    const paginationBullets = paginationElement.querySelectorAll('.advantages__bullet');
+    const paginationElement = leaderSection.querySelector('.leader__pagination');
+    const paginationBullets = paginationElement.querySelectorAll('.leader__bullet');
 
     paginationBullets.forEach((bullet, index) => {
       bullet.dataset.id = index;
     });
 
-    const activeBullet = paginationElement.querySelector('.advantages__bullet--active');
+    const activeBullet = paginationElement.querySelector('.leader__bullet--active');
     const activeBulletIndex = +activeBullet.getAttribute('data-id');
 
     if (activeBulletIndex >= BULLET_ACTIVE_THRESHOLD && activeBulletIndex < paginationBullets.length - 1) {
-      paginationBullets[activeBulletIndex - BULLET_ACTIVE_THRESHOLD].classList.remove('advantages__bullet--active-main');
-      paginationBullets[activeBulletIndex + 1].classList.add('advantages__bullet--active-main');
+      paginationBullets[activeBulletIndex - BULLET_ACTIVE_THRESHOLD].classList.remove('leader__bullet--active-main');
+      paginationBullets[activeBulletIndex + 1].classList.add('leader__bullet--active-main');
     }
 
     if (activeBulletIndex > 0 && activeBulletIndex < paginationBullets.length - BULLET_ACTIVE_THRESHOLD) {
-      paginationBullets[activeBulletIndex - 1].classList.add('advantages__bullet--active-main');
-      paginationBullets[activeBulletIndex + BULLET_ACTIVE_THRESHOLD].classList.remove('advantages__bullet--active-main');
+      paginationBullets[activeBulletIndex - 1].classList.add('leader__bullet--active-main');
+      paginationBullets[activeBulletIndex + BULLET_ACTIVE_THRESHOLD].classList.remove('leader__bullet--active-main');
     }
 
     if (mob.matches || tab.matches) {
@@ -161,6 +141,6 @@ import {Navigation, Pagination} from 'swiper/modules';
   };
 
   initializeSwiper();
-  initializeToggleButtons();
   swiperInstance.on('paginationUpdate', updatePagination);
 })();
+
