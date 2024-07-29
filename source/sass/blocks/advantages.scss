@@ -111,6 +111,8 @@
 
     @media(min-width: $vp1280) {
       gap: 32px 31px;
+      grid-template-columns: repeat(3, 356px);
+      justify-content: space-around;
     }
   }
 
