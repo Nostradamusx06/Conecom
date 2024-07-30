@@ -35,7 +35,7 @@
 
       content: "";
 
-      background-image: url("../../img/sprite/goal-dots.svg");
+      background-image: url("../img/sprite/goal-dots.svg");
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -96,7 +96,7 @@
 
       content: "";
 
-      background-image: url("../../img/sprite/goal-arrows.svg");
+      background-image: url("../img/sprite/goal-arrows.svg");
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -229,26 +229,26 @@
   &__main-wrapper {
     padding: 27px 20px 60px;
 
-    background-image: image-set(url("../../img/content/goal-xs@2x.webp") type("image/webp") 2x, url("../../img/content/goal-xs.webp") type("image/webp") 1x, url("../../img/content/goal-xs@2x.jpg") type("image/jpg") 2x, url("../../img/content/goal-xs.jpg") type("image/jpg") 1x);
+    background-image: image-set(url("../img/content/goal-xs@2x.webp") type("image/webp") 2x, url("../img/content/goal-xs.webp") type("image/webp") 1x, url("../img/content/goal-xs@2x.jpg") type("image/jpg") 2x, url("../img/content/goal-xs.jpg") type("image/jpg") 1x);
     background-repeat: no-repeat;
     background-size: cover;
 
     @media (min-width: $vp640) {
       padding: 56px 20px 55px;
 
-      background-image: image-set(url("../../img/content/goal-s@2x.webp") type("image/webp") 2x, url("../../img/content/goal-s.webp") type("image/webp") 1x, url("../../img/content/goal-s@2x.jpg") type("image/jpg") 2x, url("../../img/content/goal-s.jpg") type("image/jpg") 1x);
+      background-image: image-set(url("../img/content/goal-s@2x.webp") type("image/webp") 2x, url("../img/content/goal-s.webp") type("image/webp") 1x, url("../img/content/goal-s@2x.jpg") type("image/jpg") 2x, url("../img/content/goal-s.jpg") type("image/jpg") 1x);
     }
 
     @media (min-width: $vp960) {
       padding: 84px 20px 101px;
 
-      background-image: image-set(url("../../img/content/goal-m@2x.webp") type("image/webp") 2x, url("../../img/content/goal-m.webp") type("image/webp") 1x, url("../../img/content/goal-m@2x.jpg") type("image/jpg") 2x, url("../../img/content/goal-m.jpg") type("image/jpg") 1x);
+      background-image: image-set(url("../img/content/goal-m@2x.webp") type("image/webp") 2x, url("../img/content/goal-m.webp") type("image/webp") 1x, url("../img/content/goal-m@2x.jpg") type("image/jpg") 2x, url("../img/content/goal-m.jpg") type("image/jpg") 1x);
     }
 
     @media (min-width: $vp1280) {
       padding-top: 80px;
 
-      background-image: image-set(url("../../img/content/goal-l@2x.webp") type("image/webp") 2x, url("../../img/content/goal-l.webp") type("image/webp") 1x, url("../../img/content/goal-l@2x.jpg") type("image/jpg") 2x, url("../../img/content/goal-l.jpg") type("image/jpg") 1x);
+      background-image: image-set(url("../img/content/goal-l@2x.webp") type("image/webp") 2x, url("../img/content/goal-l.webp") type("image/webp") 1x, url("../img/content/goal-l@2x.jpg") type("image/jpg") 2x, url("../img/content/goal-l.jpg") type("image/jpg") 1x);
     }
   }
 

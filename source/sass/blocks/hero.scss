@@ -5,7 +5,7 @@
   margin: 0 auto;
 
   background-color: $color-stonewall-67;
-  background-image: image-set(url("../../img/content/hero-xs@2x.webp") type("image/webp") 2x, url("../../img/content/hero-xs.webp") type("image/webp") 1x, url("../../img/content/hero-xs@2x.jpg") type("image/jpg") 2x, url("../../img/content/hero-xs.jpg") type("image/jpg") 1x);
+  background-image: image-set(url("../img/content/hero-xs@2x.webp") type("image/webp") 2x, url("../img/content/hero-xs.webp") type("image/webp") 1x, url("../img/content/hero-xs@2x.jpg") type("image/jpg") 2x, url("../img/content/hero-xs.jpg") type("image/jpg") 1x);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -13,18 +13,18 @@
   @media (min-width: $vp640) {
     min-height: 314px;
 
-    background-image: image-set(url("../../img/content/hero-s@2x.webp") type("image/webp") 2x, url("../../img/content/hero-s.webp") type("image/webp") 1x, url("../../img/content/hero-s@2x.jpg") type("image/jpg") 2x, url("../../img/content/hero-s.jpg") type("image/jpg") 1x);
+    background-image: image-set(url("../img/content/hero-s@2x.webp") type("image/webp") 2x, url("../img/content/hero-s.webp") type("image/webp") 1x, url("../img/content/hero-s@2x.jpg") type("image/jpg") 2x, url("../img/content/hero-s.jpg") type("image/jpg") 1x);
   }
 
   @media (min-width: $vp960) {
     min-height: 599px;
 
-    background-image: image-set(url("../../img/content/hero-m@2x.webp") type("image/webp") 2x, url("../../img/content/hero-m.webp") type("image/webp") 1x, url("../../img/content/hero-m@2x.jpg") type("image/jpg") 2x, url("../../img/content/hero-m.jpg") type("image/jpg") 1x);
+    background-image: image-set(url("../img/content/hero-m@2x.webp") type("image/webp") 2x, url("../img/content/hero-m.webp") type("image/webp") 1x, url("../img/content/hero-m@2x.jpg") type("image/jpg") 2x, url("../img/content/hero-m.jpg") type("image/jpg") 1x);
   }
 
   @media (min-width: $vp1280) {
     position: relative;
-    background-image: image-set(url("../../img/content/hero-l@2x.webp") type("image/webp") 2x, url("../../img/content/hero-l.webp") type("image/webp") 1x, url("../../img/content/hero-l@2x.jpg") type("image/jpg") 2x, url("../../img/content/hero-l.jpg") type("image/jpg") 1x);
+    background-image: image-set(url("../img/content/hero-l@2x.webp") type("image/webp") 2x, url("../img/content/hero-l.webp") type("image/webp") 1x, url("../img/content/hero-l@2x.jpg") type("image/jpg") 2x, url("../img/content/hero-l.jpg") type("image/jpg") 1x);
 
     &::after {
       position: absolute;
@@ -33,7 +33,7 @@
       height: 367px;
       bottom: -97px;
       right: 0;
-      background-image: url("../../img/sprite/hero-dots.svg");
+      background-image: url("../img/sprite/hero-dots.svg");
       content: "";
     }
   }
