@@ -36,7 +36,7 @@
 
     background-color: $color-smalt;
 
-    @media(min-width: $vp960) {
+    @media (min-width: $vp960) {
       height: 343px;
 
       &:nth-of-type(7) {
@@ -46,7 +46,7 @@
       }
     }
 
-    @media(min-width: $vp1280) {
+    @media (min-width: $vp1280) {
       width: 356px;
       height: 317px;
 
@@ -81,14 +81,14 @@
 
     grid-area: 1/2/2/3;
 
-    @media(min-width: $vp960) {
+    @media (min-width: $vp960) {
       font-size: 40px;
       line-height: 60px;
 
       padding-bottom: 32px;
     }
 
-    @media(min-width: $vp1280) {
+    @media (min-width: $vp1280) {
       padding-bottom: 60px;
     }
   }
@@ -102,14 +102,14 @@
 
     grid-area: 2/2/3/3;
 
-    @media(min-width: $vp960) {
+    @media (min-width: $vp960) {
       display: grid;
 
       grid-template-columns: 1fr 1fr 1fr;
       gap: 20.5px 35px;
     }
 
-    @media(min-width: $vp1280) {
+    @media (min-width: $vp1280) {
       gap: 32px 31px;
       grid-template-columns: repeat(3, 356px);
       justify-content: space-around;
@@ -169,7 +169,7 @@
     opacity: 0;
     color: $color-default-white;
 
-    @media(min-width: $vp960) {
+    @media (min-width: $vp960) {
       font-size: 18px;
       padding: 20px;
     }
@@ -195,7 +195,7 @@
 
     color: $color-default-white;
 
-    @media(min-width: $vp960) {
+    @media (min-width: $vp960) {
       font-size: 18px;
     }
   }
@@ -211,11 +211,11 @@
     z-index: 1;
     transition: all $trans-default;
 
-    @media(min-width: $vp960) {
+    @media (min-width: $vp960) {
       bottom: 23px;
     }
 
-    @media(min-width: $vp1280) {
+    @media (min-width: $vp1280) {
       bottom: 25px;
     }
 
@@ -270,11 +270,11 @@
 
     background-color: $color-linen;
 
-    @media(min-width: $vp640) {
+    @media (min-width: $vp640) {
       width: 20px;
     }
 
-    @media(min-width: $vp960) {
+    @media (min-width: $vp960) {
       display: none;
     }
 
@@ -307,7 +307,7 @@
       top: 16px;
       width: 12px;
 
-      @media(min-width: $vp640) {
+      @media (min-width: $vp640) {
         left: 5px;
       }
     }
@@ -323,7 +323,7 @@
     grid-area: 3/2/4/3;
     gap: 8px;
 
-    @media(min-width: $vp960) {
+    @media (min-width: $vp960) {
       display: none;
     }
   }

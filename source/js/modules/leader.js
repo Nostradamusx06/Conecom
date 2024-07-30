@@ -143,4 +143,3 @@ import {Navigation, Pagination} from 'swiper/modules';
   initializeSwiper();
   swiperInstance.on('paginationUpdate', updatePagination);
 })();
-
